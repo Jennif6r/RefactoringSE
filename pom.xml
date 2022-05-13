@@ -5,4 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>SERefactoring</name>
   <description>SERefactoring</description>
+  <properties>
+  <sonar.organization>jennif6r</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 </project>
