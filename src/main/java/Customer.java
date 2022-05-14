@@ -14,7 +14,7 @@ class Customer {
         return name;
     };
     public String statement() {
-        Enumeration enumRentals = rentals.elements();	    
+        Enumeration <Rental> enumRentals = rentals.elements();	    
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
@@ -31,7 +31,7 @@ class Customer {
 
 	private double getTotalCharge() {
 		double result = 0;
-		Enumeration enumRentals = this.rentals.elements();
+		Enumeration <Rental>enumRentals = this.rentals.elements();
 		while (enumRentals.hasMoreElements()) {
 			Rental each = (Rental) enumRentals.nextElement();
 			result += each.getcharge();
@@ -41,7 +41,7 @@ class Customer {
 
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
-		Enumeration enumRentals = this.rentals.elements();
+		Enumeration <Rental> enumRentals = this.rentals.elements();
 		while (enumRentals.hasMoreElements()) {
 			Rental each = (Rental) enumRentals.nextElement();
 			result += each.getFrequentRenterPoints();
@@ -50,7 +50,7 @@ class Customer {
 	}
 	
 	public String htmlStatement() {
-		Enumeration enumRentals = this.rentals.elements();
+		Enumeration <Rental> enumRentals = this.rentals.elements();
 		String result = "<H1>Rentals for <EM>" + getName() + "</EM><H1><P>\n";
 		while (enumRentals.hasMoreElements()) {
 			Rental each = (Rental) enumRentals.nextElement();
