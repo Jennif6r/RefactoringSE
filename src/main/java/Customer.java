@@ -31,9 +31,9 @@ class Customer {
 
 	private double getTotalCharge() {
 		double result = 0;
-		Enumeration rentals = this.rentals.elements();
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		Enumeration enum_rentals = this.rentals.elements();
+		while (enum_rentals.hasMoreElements()) {
+			Rental each = (Rental) enum_rentals.nextElement();
 			result += each.getcharge();
 		}
 		return result;
@@ -41,19 +41,19 @@ class Customer {
 
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
-		Enumeration rentals = this.rentals.elements();
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		Enumeration enum_rentals = this.rentals.elements();
+		while (enum_rentals.hasMoreElements()) {
+			Rental each = (Rental) enum_rentals.nextElement();
 			result += each.getFrequentRenterPoints();
 		}
 		return result;
 	}
 	
 	public String htmlStatement() {
-		Enumeration rentals = this.rentals.elements();
+		Enumeration enum_rentals = this.rentals.elements();
 		String result = "<H1>Rentals for <EM>" + getName() + "</EM><H1><P>\n";
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		while (enum_rentals.hasMoreElements()) {
+			Rental each = (Rental) enum_rentals.nextElement();
 			// show figures for each rental
 			result += each.getMovie().getTitle() + ": " + String.valueOf(each.getcharge()) + "<BR>\n";
 		}
