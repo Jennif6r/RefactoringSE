@@ -14,12 +14,12 @@ class Customer {
         return name;
     };
     public String statement() {
-        Enumeration enum_rentals = rentals.elements();	    
+        Enumeration enumRentals = rentals.elements();	    
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
-        while (enum_rentals.hasMoreElements()) {
-            Rental each = (Rental) enum_rentals.nextElement();
+        while (enumRentals.hasMoreElements()) {
+            Rental each = (Rental) enumRentals.nextElement();
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle()+ "\t" + "\t" + each.getDaysRented() + "\t" + String.valueOf(each.getcharge()) + "\n";
         }
@@ -31,9 +31,9 @@ class Customer {
 
 	private double getTotalCharge() {
 		double result = 0;
-		Enumeration enum_rentals = this.rentals.elements();
-		while (enum_rentals.hasMoreElements()) {
-			Rental each = (Rental) enum_rentals.nextElement();
+		Enumeration enumRentals = this.rentals.elements();
+		while (enumRentals.hasMoreElements()) {
+			Rental each = (Rental) enumRentals.nextElement();
 			result += each.getcharge();
 		}
 		return result;
@@ -41,19 +41,19 @@ class Customer {
 
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
-		Enumeration enum_rentals = this.rentals.elements();
-		while (enum_rentals.hasMoreElements()) {
-			Rental each = (Rental) enum_rentals.nextElement();
+		Enumeration enumRentals = this.rentals.elements();
+		while (enumRentals.hasMoreElements()) {
+			Rental each = (Rental) enumRentals.nextElement();
 			result += each.getFrequentRenterPoints();
 		}
 		return result;
 	}
 	
 	public String htmlStatement() {
-		Enumeration enum_rentals = this.rentals.elements();
+		Enumeration enumRentals = this.rentals.elements();
 		String result = "<H1>Rentals for <EM>" + getName() + "</EM><H1><P>\n";
-		while (enum_rentals.hasMoreElements()) {
-			Rental each = (Rental) enum_rentals.nextElement();
+		while (enumRentals.hasMoreElements()) {
+			Rental each = (Rental) enumRentals.nextElement();
 			// show figures for each rental
 			result += each.getMovie().getTitle() + ": " + String.valueOf(each.getcharge()) + "<BR>\n";
 		}
